@@ -1,0 +1,31 @@
+/**********************************************************
+ Colors
+
+ Feel free to change these. We should set up a color pallette. Don't worry about shading we can use scss functions if we need to later on to get the right shade from our palette.
+**********************************************************/
+$light: hsl(0, 0%, 92%);
+$accent1:hsl(27, 88%, 38%);
+$accent2: hsl(199, 92%, 29%);
+$dark: hsl(0, 0%, 16%);
+
+
+/**********************************************************
+ Breakpoints
+
+ We don't have to do it this way, but we can use this to set up the media query breakpoints. I (Lautaro) be doing this with a mixin, but we don't have to do it that way. We can also change this later if we need to since these are just variables.
+**********************************************************/
+$M: 32em;
+$L: 52em;
+
+
+/**********************************************************
+ For anyone that has used variables in regular CSS, this is really similar to doing this at the top of a CSS file:
+
+:root {
+  --dark: #222;
+  --light: #fff;
+  --accent1: #efe;
+  --accent1: #9fe;
+}
+
+**********************************************************/

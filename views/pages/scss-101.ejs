@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCSS 101</title>
+</head>
+<%- include ("../partials/header.ejs") %>
+
+<body>
+  <%- include ("../partials/nav.ejs") %>
+  <main class="container">
+    <h1>SCSS 101</h1>
+    <p>A quick overview by Lautaro Cuevas</p>
+
+    <section >
+      <h2>What is SCSS?</h2>
+      <p>SCSS is a CSS pre-processor. That basically means that we write our SCSS and that will then be converted to
+        regular CSS that can be consumed by the client.</p>
+    </section>
+    <section >
+      <h2>How do I use SCSS?</h2>
+      <ol>
+        <li>Write your code in the SCSS file. If it is your first time writing SCSS write it in an SCSS file outside of
+          the partials folder.</li>
+        <li>Run the script to (try to) convert the SCSS to CSS</li>
+        <li>SCSS will warn you if you have any errors when you try to convert SCSS to CSS. This is where you fix them.
+          You cannot move on unless you fix them. If you're using regular CSS you shouldn't run into any problems.</li>
+        <li>Once the SCSS is converted to CSS you can then run the regular start command.</li>
+        <li>Test in browser to make sure your styles are applied</li>
+      </ol>
+      <p>I have set up a script command to convert any SCSS to CSS using the SCSS node module. I have already added it
+        to the package. You should run <code>npm run scss</code> to run the script and convert all SCSS files to CSS</p>
+      <p>If it doesn't work try running <code>npm install</code> to ensure that the SCSS module is installed.</p>
+    </section>
+    <section >
+      <h2>SCSS Partials</h2>
+      <h3>What are they?</h3>
+      <p>SCSS partials are just a way to separate or break up your style rules. This is essentially the same as the
+        partials we use in ejs to repeat the header and nav.</p>
+      <h3>How do I use them?</h3>
+      <h4>Creating a partial</h4>
+      <p>You can create a partial by adding a new file to the partials folder in the SCSS folder. You can name this
+        anything you want, just make sure it makes sense for the rules it contains. For example, a
+        <code>_form.scss</code> partial should only contain rules for an HTML form.</p>
+      <h4>Using a partial</h4>
+      <p>Once you have created a partial file you can use it in an SCSS file by using the import statement. Below is an
+        example to make variables available in your SCSS file.</p>
+      <code>@import 'partials/variables'</code>
+      <p>Note that you do not use the underscore or the file extension. SCSS will understand that you want to import the
+        partial file. Anything inside of the partial file will now also be included in the final CSS file when the SCSS
+        is converted to regular CSS</p>
+    </section>
+    <section>
+      <h2>Example:</h2>
+      <p>Let's look at a (VERY) simple example of how we would use SCSS.</p>
+      <div>
+        <h3>The variables partial file</h3>
+        <p>The code below would be our variables partial file and would include a specific color we want to use
+          throughout our site. In this case I am setting the $blue variable to the hex value of the shade of blue I'd
+          like to use throughout the stylesheet.</p>
+        <code>$blue: #3b41f1;</code>
+      </div>
+      <div>
+        <h3>The main SCSS file</h3>
+        <p>The code below would be our main SCSS file and would have all of the rules we want to use for our CSS. Here
+          we can import our variables so that we can reuse that shade of blue anywhere in our styles by using the
+          variable. The code for that can be found below.</p>
+        <code>// First we would import the partial<br>
+          @import 'partials/variables'<br><br>
+          // Then we can use it in our CSS rules<br><br>
+          // Let make the body use the blue color for the background:<br>
+          body{<br>
+          // The $blue will be replaced with the color value we stored in the _variables partial file.<br>
+          background-color: $blue;<br>
+          }<br><br>
+          // We can use it for other rules too like color to set the text color<br>
+          p{<br>
+          // Once again $blue will be replaced by the value set in the _variables partial file.<br>
+          color: $blue;<br>
+          }
+        </code>
+      </div>
+    </section>
+  </main>
+
+</body>
+
+</html>
