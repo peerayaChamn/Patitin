@@ -1,0 +1,10 @@
+@import 'partials/variables';
+
+/**********************************************************
+ SCSS Examples, you can definitely delete these.
+ Look at the public/css folder to see the calendar.css that is created from this file. Note that the variables are not imported but their values are passed along into the final CSS.
+**********************************************************/
+body{
+  background: $dark;
+  color: $light;
+}

@@ -28,7 +28,7 @@
         <li>Run the script to (try to) convert the SCSS to CSS</li>
         <li>SCSS will warn you if you have any errors when you try to convert SCSS to CSS. This is where you fix them.
           You cannot move on unless you fix them. If you're using regular CSS you shouldn't run into any problems.</li>
-        <li>Once the SCSS is converted to CSS you can then run the regular start comand.</li>
+        <li>Once the SCSS is converted to CSS you can then run the regular start command.</li>
         <li>Test in browser to make sure your styles are applied</li>
       </ol>
       <p>I have set up a script command to convert any SCSS to CSS using the SCSS node module. I have already added it
@@ -46,9 +46,9 @@
         anything you want, just make sure it makes sense for the rules it contains. For example, a
         <code>_form.scss</code> partial should only contain rules for an HTML form.</p>
       <h4>Using a partial</h4>
-      <p>Once you have created a partial file you can use it in an SCSS file by using the include statement. Below is an
+      <p>Once you have created a partial file you can use it in an SCSS file by using the import statement. Below is an
         example to make variables available in your SCSS file.</p>
-      <code>@include 'partials/variables'</code>
+      <code>@import 'partials/variables'</code>
       <p>Note that you do not use the underscore or the file extension. SCSS will understand that you want to import the
         partial file. Anything inside of the partial file will now also be included in the final CSS file when the SCSS
         is converted to regular CSS</p>
@@ -68,8 +68,8 @@
         <p>The code below would be our main SCSS file and would have all of the rules we want to use for our CSS. Here
           we can import our variables so that we can reuse that shade of blue anywhere in our styles by using the
           variable. The code for that can be found below.</p>
-        <code>// First we would import/include the partial<br>
-          @include 'partials/variables'<br><br>
+        <code>// First we would import the partial<br>
+          @import 'partials/variables'<br><br>
           // Then we can use it in our CSS rules<br><br>
           // Let make the body use the blue color for the background:<br>
           body{<br>
