@@ -4,17 +4,10 @@
  Feel free to change these. We should set up a color pallette. Don't worry about shading we can use scss functions if we need to later on to get the right shade from our palette.
 **********************************************************/
 $light: hsl(0, 0%, 92%);
-$accent1: hsl(27, 88%, 38%);
+$accent1:hsl(27, 88%, 38%);
 $accent2: hsl(199, 92%, 29%);
 $dark: hsl(0, 0%, 16%);
 
-/* Proposed project color pallette */
-$blue: hsl(203, 54%, 73%);
-$dark-blue: hsl(201, 36%, 49%);
-$orange: hsl(30, 69%, 54%);
-$dark-orange: hsl(18, 70%, 54%);
-$violet: hsl(311, 56%, 47%);
-$dark-violet: hsl(314, 58%, 34%);
 
 /**********************************************************
  Breakpoints
@@ -23,6 +16,7 @@ $dark-violet: hsl(314, 58%, 34%);
 **********************************************************/
 $M: 32em;
 $L: 52em;
+
 
 /**********************************************************
  For anyone that has used variables in regular CSS, this is really similar to doing this at the top of a CSS file:

@@ -1,8 +1,8 @@
-
 const express = require('express');
 const router = express.Router();
+const CalendarController = require('../controllers/calendar');
 
-const calendarController = require('../controllers/calendar');
-router.get('/test', calendarController.getTest);
 
-module.exports = router
+router.get('/',CalendarController.showCalendar);
+
+module.exports = router;
