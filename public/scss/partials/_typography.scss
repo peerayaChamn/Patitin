@@ -1,0 +1,37 @@
+// Import the fonts for the site
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@200&display=swap");
+
+// Create variables for the font-families to be used
+
+// The $heading variable would correspond to h1-h6 tags
+$heading: "Poppins", sans-serif;
+
+// All other text should use the font below.
+$body: "Roboto", sans-serif;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading;
+}
+
+body {
+  font-family: $body;
+  font-size: 18pt;
+  color: $dark-blue;
+}
+/**********************************************************
+ The following classes are only meant for testing purposes. Something more decoupled from the HTML should be used for components in a project.
+**********************************************************/
+.orange {
+  color: $orange;
+}
+.blue {
+  color: $blue;
+}
+.violet {
+  color: $violet;
+}

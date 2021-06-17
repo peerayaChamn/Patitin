@@ -1,1 +1,2 @@
-body{background:#292929;color:#ebebeb;font-style:italic;font-weight:bold}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@200&display=swap");html,body{margin:0;padding:0}ol,ul{list-style:none}h1,h2,h3,h4,h5,h6{font-family:"Poppins",sans-serif}body{font-family:"Roboto",sans-serif;font-size:18pt;color:#508aaa}.orange{color:#db8a39}.blue{color:#95c3df}.violet{color:#bb35a2}body{background:#ebebeb}main{padding:2em}
+/*# sourceMappingURL=calendar.css.map */
