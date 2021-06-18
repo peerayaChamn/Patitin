@@ -7,14 +7,29 @@
 </head>
 
 <body>
+  <%- include ("../partials/nav.ejs") %>
   <main>
     <h1 class="orange">"Welcome to Patitin <%= username %>!</h1>
-    <p>This is some dummy text. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil facilis cupiditate dolores. Perferendis deleniti ab inventore. Id dicta esse, libero tenetur vel officiis minus minima rem impedit, nam facilis ex?</p>
-<div class="intro">
-  <h2 class="violet">Patitin</h2>
-  <p>Schedule Manager</p>
-</div>
+    <p>This is some dummy text. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil facilis cupiditate
+      dolores. Perferendis deleniti ab inventore. Id dicta esse, libero tenetur vel officiis minus minima rem impedit,
+      nam facilis ex?</p>
+    <div class="intro">
+      <h2 class="violet">Patitin</h2>
+      <p>Schedule Manager</p>
+    </div>
+    <div class="app-container">
+      <div class="sidebar-container">
+        Some sidebar stuff will go here!
+      </div>
+      <div class="calendar-container" id="calendar">
+        <% for(let i=1; i<= totalDays; i++ ){ %>
+        <div <% if(i === today){ %> class="current-date day-container" <% } else {%> class="day-container" <% } %>>
+          <p class="date-num"><%= i %></p>
+          <!-- Appointment/event logic should go here -->
 
+        </div>
+        <% } %>
+      </div>
   </main>
 </body>
 

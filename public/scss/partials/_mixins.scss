@@ -1,0 +1,16 @@
+//This code was created from a MQ mixin I had previously written.
+@mixin MQ($breakpoint) {
+  @if $breakpoint == S {
+    @media (max-width: $S) {
+      @content;
+    }
+  } @else if $breakpoint == M {
+    @media only screen and (min-width: $S) {
+      @content;
+    }
+  } @else if $breakpoint == L {
+    @media only screen and (min-width: $L) {
+      @content;
+    }
+  }
+}

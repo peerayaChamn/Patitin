@@ -8,12 +8,20 @@ $accent1:hsl(27, 88%, 38%);
 $accent2: hsl(199, 92%, 29%);
 $dark: hsl(0, 0%, 16%);
 
+/* Proposed project color pallette */
+$blue: hsl(203, 54%, 73%);
+$dark-blue: hsl(201, 36%, 49%);
+$orange: hsl(30, 69%, 54%);
+$dark-orange: hsl(18, 70%, 54%);
+$violet: hsl(311, 56%, 47%);
+$dark-violet: hsl(314, 58%, 34%);
 
 /**********************************************************
  Breakpoints
 
  We don't have to do it this way, but we can use this to set up the media query breakpoints. I (Lautaro) be doing this with a mixin, but we don't have to do it that way. We can also change this later if we need to since these are just variables.
 **********************************************************/
+$S: 31.9em;
 $M: 32em;
 $L: 52em;
 
