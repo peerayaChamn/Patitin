@@ -8,13 +8,16 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 const csrf = require('csurf');
 const flash = require('connect-flash');
 
+// Enable .env variables
+require('dotenv').config();
+
 const cors = require('cors');
 
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
 // 'mongodb+srv://user:[key here]';
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:33017';
+const MONGODB_URI = process.env.MONGODB_URI;
 const PORT = process.env.PORT || 5000 // So we can run on heroku || (OR) localhost:5000
 const HEROKU_CORS = process.env.HEROKU_CORS
 // 'https://git.heroku.com/[name of heroku app here]'
@@ -32,17 +35,17 @@ app.set('views', 'views');
 
 //Heroku connection
 const corsOptions = {
-    origin: HEROKU_CORS,
-    optionsSuccessStatus: 200
+  origin: HEROKU_CORS,
+  optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
 
 const options = {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    family: 4
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+  family: 4
 };
 
 // const adminRoutes = require('./routes/admin');
@@ -50,7 +53,9 @@ const homeRoutes = require('./routes/home');
 const authRoutes = require('./routes/auth');
 //const calRoutes = require('./routes/calendar');
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(
   session({
@@ -107,7 +112,7 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect(MONGODB_URI)
+  .connect(MONGODB_URI, options)
   .then(result => {
     app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
   })
