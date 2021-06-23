@@ -17,6 +17,7 @@
     "connect-mongodb-session": "^2.4.1",
     "cors": "^2.8.5",
     "csurf": "^1.11.0",
+    "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
@@ -26,7 +27,6 @@
     "nodemailer": "^6.6.1"
   },
   "devDependencies": {
-    "dotenv": "^10.0.0",
     "nodemon": "^2.0.7"
   }
 }
