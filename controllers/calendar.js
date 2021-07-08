@@ -7,10 +7,19 @@ const calHelpers = require('../util/cal-helpers');
 
 
 module.exports.showCalendar = (req, res, next) => {
-
-  res.render('cal/calendar', {
+  var now = new Date()
+  console.log('year', req.query.year, 'month', req.query.month, 'day', req.query.day)
+  var year = req.query.year || 1900 + now.getYear()
+  var month = req.query.month || now.getMonth()
+  var day = req.query.day || now.getDate() 
+  now = new Date( year, month, day )
+  var cal = new Date( year, month, 1)
+  cal.addDays(-1 * ( cal.getDay()+1 ) )
+  res.render('cal/patitin', {
     title: 'Patitin Calendar',
     searchedValue: '',
+    now: now,
+    cal: cal,
     path: '/calendar',
   });
 

@@ -1,134 +1,19 @@
-<%- include('../includes/head.ejs') %>
-</head>
-
-<body>
-    <%- include('../includes/navigation.ejs') %>
-<div id="calendar">
-    <div id="first-calendar">
-         <div id="Calendar-header">
-            <button><</button>
-            <span>January    </span>
-            <button>></button>
-         </div>
-         <div>
-            <span>S</span>
-            <span>M</span>
-            <span>T</span>
-            <span>W</span>
-            <span>T</span>
-            <span>F</span>
-            <span>S</span>
-         </div>
-         <div>
-             <a href="#" >1</a>
-             <a href="#" >2</a>
-             <a href="#" >3</a>
-             <a href="#" >4</a>
-             <a href="#" >5</a>
-             <a href="#" >6</a>
-             <a href="#" >7</a>
-        </div>
-         <div>
-             <a href="#" >1</a>
-             <a href="#" >2</a>
-             <a href="#" >3</a>
-             <a href="#" >4</a>
-             <a href="#" >5</a>
-             <a href="#" >6</a>
-             <a href="#" >7</a>
-        </div>
-         <div>
-             <a href="#" >1</a>
-             <a href="#" >2</a>
-             <a href="#" >3</a>
-             <a href="#" >4</a>
-             <a href="#" >5</a>
-             <a href="#" >6</a>
-             <a href="#" >7</a>
-        </div>
-         <div>
-             <a href="#" >1</a>
-             <a href="#" >2</a>
-             <a href="#" >3</a>
-             <a href="#" >4</a>
-             <a href="#" >5</a>
-             <a href="#" >6</a>
-             <a href="#" >7</a>
-        </div>
-         <div>
-             <a href="#" >1</a>
-             <a href="#" >2</a>
-             <a href="#" >3</a>
-             <a href="#" >4</a>
-             <a href="#" >5</a>
-             <a href="#" >6</a>
-             <a href="#" >7</a>
-        </div>
-    </div>
-    
-
-    <div id="second-calendar">
-         <div id="Calendar-header">
-            <button><</button>
-            <span>January    </span>
-            <button>></button>
-         </div>
-         <div>
-            <span>S</span>
-            <span>M</span>
-            <span>T</span>
-            <span>W</span>
-            <span>T</span>
-            <span>F</span>
-            <span>S</span>
-         </div>
-         <div>
-             <a href="#" >1</a>
-             <a href="#" >2</a>
-             <a href="#" >3</a>
-             <a href="#" >4</a>
-             <a href="#" >5</a>
-             <a href="#" >6</a>
-             <a href="#" >7</a>
-        </div>
-         <div>
-             <a href="#" >1</a>
-             <a href="#" >2</a>
-             <a href="#" >3</a>
-             <a href="#" >4</a>
-             <a href="#" >5</a>
-             <a href="#" >6</a>
-             <a href="#" >7</a>
-        </div>
-         <div>
-             <a href="#" >1</a>
-             <a href="#" >2</a>
-             <a href="#" >3</a>
-             <a href="#" >4</a>
-             <a href="#" >5</a>
-             <a href="#" >6</a>
-             <a href="#" >7</a>
-        </div>
-         <div>
-             <a href="#" >1</a>
-             <a href="#" >2</a>
-             <a href="#" >3</a>
-             <a href="#" >4</a>
-             <a href="#" >5</a>
-             <a href="#" >6</a>
-             <a href="#" >7</a>
-        </div>
-         <div>
-             <a href="#" >1</a>
-             <a href="#" >2</a>
-             <a href="#" >3</a>
-             <a href="#" >4</a>
-             <a href="#" >5</a>
-             <a href="#" >6</a>
-             <a href="#" >7</a>
-        </div>
+<div class="calendar">
+    <div class="cal-header">
+      <div><a href="/calendar?year=<%= 1900 + now.getYear() %>&month=<%= now.getMonth() - 1 %>&day=<%= now.getDate() %>" class="prev">&#8249;</a></div>
+      <div><span><%= now.toLocaleString('default', { month: 'short'}) %>  <%= now.toLocaleString('default', { year: 'numeric'}) %></span></div>
+      <div><a href="/calendar?year=<%= 1900 + now.getYear() %>&month=<%= now.getMonth() + 1 %>&day=<%= now.getDate() %>" class="next">&#8250;</a></div>
+    </div>  
+     <div class="date">
+        <div class="day">S</div>
+        <div class="day">M</div>
+        <div class="day">T</div>
+        <div class="day">W</div>
+        <div class="day">T</div>
+        <div class="day">F</div>
+        <div class="day">S</div>
+        <% for(let i=1; i<43; i++ ){ cal.addDays(1) %>
+            <a href="" class=<%= ( now.getMonth() === cal.getMonth() && now.getDate() === cal.getDate() ) ? "now" : ( now.getMonth() === cal.getMonth() ) ? "same-month" : "no-month"  %> ><%= cal.getDate() %></a> 
+        <% } %>
     </div>
 </div>
-<%- include('../cal/agenda.ejs') %>
-
-<%- include('../includes/end.ejs') %>

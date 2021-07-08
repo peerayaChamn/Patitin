@@ -9,7 +9,7 @@ const isAuth = require('../middleware/is-auth');
 const router = express.Router();
 
 router.get('/', homeController.getIndex);
-router.get('/calendar', homeController.showCalendar);
+router.get('/calendar', calendarController.showCalendar);
 router.get('/test', calendarController.getTest);
 
 module.exports = router;

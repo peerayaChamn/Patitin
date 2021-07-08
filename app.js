@@ -1,3 +1,13 @@
+//global function for calendar
+Date.prototype.addDays = function(days) {
+      this.setDate( this.getDate() + days )
+      return this
+}
+Date.prototype.addMonths = function(months) {
+      this.setMonth( this.getMonth() + months )
+      return this
+}
+
 const path = require('path');
 
 const express = require('express');
@@ -18,6 +28,9 @@ const User = require('./models/user');
 
 // 'mongodb+srv://user:[key here]';
 const MONGODB_URI = process.env.MONGODB_URI;
+
+//const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:33017';
+
 const PORT = process.env.PORT || 5000 // So we can run on heroku || (OR) localhost:5000
 const HEROKU_CORS = process.env.HEROKU_CORS
 // 'https://git.heroku.com/[name of heroku app here]'

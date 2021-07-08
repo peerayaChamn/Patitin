@@ -76,7 +76,7 @@ form {
 .main-header__item a.active,
 .main-header__item button:hover,
 .main-header__item button:active {
-  color: #ffeb3b;
+  color: orange;
 }
 
 .mobile-nav {
@@ -253,6 +253,135 @@ form {
   color: red;
 }
 
+/*style for calendar and agenda*/
+.container {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    grid-gap: 1rem;  
+}
+
+.calendar {
+  width: 400px;
+  background-color: #55dde0;
+  box-shadow:5px 10px 10px black;
+  border-radius: 10px;
+  margin-top: 2em;
+  margin-left: 1em;
+}
+
+.prev {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color:#f6ae2d;
+  color: black;
+  border-radius: 10px;
+
+}
+
+.next {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #f6ae2d;
+  color: black;
+  float: right;
+  border-radius: 10px;
+}
+
+.cal-header {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.cal-header > div {
+  flex: 1; 
+}
+
+.cal-header span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 0.5px 0.5px 2px red;
+  color: blue;
+ }
+ 
+.calendar .date {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px;
+}
+
+.calendar .day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  font-weight: 600;
+  color: #f26419;
+
+}
+.calendar .now {
+  text-decoration: none;
+  margin: 0 auto;
+  padding: 5px;
+  color: #262626;
+}
+  
+.calendar .same-month {
+  text-decoration: none;
+  margin: 0 auto;
+  padding: 5px;
+  color: #262626;
+}
+
+.calendar .no-month {
+  text-decoration: none;
+  color: gray;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar a:hover {
+  background-color: #ddd;
+  
+}
+.agenda {
+  font-family: Josefin Sans, sans-serif;
+  border: solid 2px blue;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  padding: 0 15px 25px 15px;
+  width: 400px;
+  margin-top: 1em;
+  margin-left: 1em;
+  box-shadow:5px 10px 10px black;
+}
+.agenda .weekday h2 {
+  color: blue;
+  text-shadow: 0.5px 0.5px 2px red;
+  margin: 0.5rem;
+  
+}
+
+.agenda .hours span {
+  display: inline-block;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px black;
+  word-wrap: normal;
+  color: black;
+  font-weight: 900;
+    
+}
+div.agenda .hours input {
+  padding: 0;
+  min-height: 60px;
+  width: 100%;
+}
+ 
 @media (min-width: 768px) {
   .main-header__nav {
     display: flex;
@@ -265,4 +394,9 @@ form {
   .user-message {
     width: 30rem;
   }
+.agenda {
+width: 600px;
+}  
+  
+  
 }
