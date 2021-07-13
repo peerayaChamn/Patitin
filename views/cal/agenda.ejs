@@ -6,7 +6,7 @@
   <% events.forEach(e=>{ %>
   <div class="event-container">
     <p><%= e.title %></p>
-    <p><%= e.datetime.getHours() %>:<%= e.datetime.getMinutes %></p>
+    <p><%= e.datetime.getHours() %>:<%= e.datetime.getMinutes() %></p>
     <p><%= e.description %></p>
   </div>
   <% }) %>
