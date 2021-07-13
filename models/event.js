@@ -11,6 +11,10 @@ const eventSchema = new Schema({
     type: String,
     required: true
   },
+  datetime: {
+    type: Date,
+    required: true
+  },
   location: {
     type: String,
   },
@@ -23,10 +27,9 @@ const eventSchema = new Schema({
     required: true
   },
   attendees: [{
-    productId: {
+    user: {
       type: Schema.Types.ObjectId,
-      ref: 'Product',
-      required: true
+      ref: 'User'
     },
     rsvp: {
       type: String,

@@ -1,0 +1,15 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+  <div class="container">
+    <% events.forEach(e=>{ %>
+    <div class="event-container">
+      <p><%= e.title %></p>
+      <p><%= e.datetime.getDate() %>/<%= e.datetime.getMonth()+1 %>/<%= e.datetime.getFullYear() %> </p>
+      <p><%= e.description %></p>
+    </div>
+    <% }) %>
+  </div>
+  <%- include('../includes/end.ejs') %>

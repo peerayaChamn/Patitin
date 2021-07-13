@@ -33,7 +33,6 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 const PORT = process.env.PORT || 5000 // So we can run on heroku || (OR) localhost:5000
 const HEROKU_CORS = process.env.HEROKU_CORS
-// 'https://git.heroku.com/[name of heroku app here]'
 
 // Startup
 const app = express();
@@ -64,7 +63,7 @@ const options = {
 // const adminRoutes = require('./routes/admin');
 const homeRoutes = require('./routes/home');
 const authRoutes = require('./routes/auth');
-//const calRoutes = require('./routes/calendar');
+const eventRoutes = require('./routes/events');
 
 app.use(bodyParser.urlencoded({
   extended: false
@@ -108,15 +107,13 @@ app.use((req, res, next) => {
 // app.use('/admin', adminRoutes);
 app.use(homeRoutes);
 app.use(authRoutes);
-//app.use('/calendar', calRoutes);
+app.use('/events', eventRoutes);
 
 app.get('/500', errorController.get500);
 
 app.use(errorController.get404);
 
 app.use((error, req, res, next) => {
-  // res.status(error.httpStatusCode).render(...);
-  // res.redirect('/500');
   res.status(500).render('500', {
     pageTitle: 'Error!',
     path: '/500',

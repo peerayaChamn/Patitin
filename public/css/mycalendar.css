@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
 * {
   box-sizing: border-box;
@@ -7,29 +7,13 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: yellow;
 }
 
 main {
   padding: 1rem;
   margin: auto;
-}
-
-form {
-  display: inline;
-}
-
-.centered {
-  text-align: center;
-}
-
-.image {
-  height: 20rem;
-}
-
-.image img {
-  height: 100%;
 }
 
 .main-header {
@@ -127,7 +111,7 @@ form {
 .mobile-nav__item a.active,
 .mobile-nav__item button:hover,
 .mobile-nav__item button:active {
-  background: lightgreen;  
+  background: lightgreen;
   color: white;
   border-radius: 4px;
 }
@@ -163,80 +147,6 @@ form {
   display: none;
 }
 
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: stretch;
-}
-
-.card {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 20px;
-}
-.card__header{ border-radius: 20px 20px 0 0;}
-
-
-.card__header,
-.card__content {
-  padding: 1rem;
-  background-color: lightgreen;
-}
-
-.card__header h1,
-.card__content h1,
-.card__content h2,
-.card__content p {
-  margin: 0;
-}
-
-.card__image {
-  width: 100%;
-}
-
-.card__image img {
-  width: 100%;
-}
-
-.card__actions {
-  padding: 1rem;
-  text-align: center;
-}
-
-.card__actions button,
-.card__actions a {
-  margin: 0 0.25rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.25rem 1rem;
-  text-decoration: none;
-  font: inherit;
-  border: 1px solid #00695c;
-  color: #00695c;
-  background: white;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.btn:hover,
-.btn:active {
-  background-color: lawngreen;
-  color: white;
-}
-
-.btn.danger {
-  color: red;
-  border-color: red;
-}
-
-.btn.danger:hover,
-.btn.danger:active {
-  background: red;
-  color: white;
-}
-
 .user-message {
   margin: auto;
   width: 90%;
@@ -255,29 +165,29 @@ form {
 
 /*style for calendar and agenda*/
 .container {
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-    grid-gap: 1rem;  
+  margin: auto;
+  display: grid;
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
 }
 
 .calendar {
-  width: 400px;
+  width: 100%;
+  max-width: 450px;
   background-color: #55dde0;
-  box-shadow:5px 10px 10px black;
+  box-shadow: 5px 10px 10px black;
   border-radius: 10px;
-  margin-top: 2em;
-  margin-left: 1em;
 }
 
 .prev {
   text-decoration: none;
   display: inline-block;
   padding: 8px 16px;
-  background-color:#f6ae2d;
+  background-color: #f6ae2d;
   color: black;
   border-radius: 10px;
-
 }
 
 .next {
@@ -292,21 +202,20 @@ form {
 
 .cal-header {
   padding: 0.5rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
+  justify-content: center;
 }
 
-.cal-header > div {
-  flex: 1; 
-}
-
-.cal-header span {
+.cal-header .month-year {
   font-size: 1.5rem;
   font-weight: 600;
   text-shadow: 0.5px 0.5px 2px red;
   color: blue;
- }
- 
+  text-align: center;
+}
+
 .calendar .date {
   padding: 20px;
   display: grid;
@@ -321,15 +230,17 @@ form {
   height: 25px;
   font-weight: 600;
   color: #f26419;
-
 }
 .calendar .now {
   text-decoration: none;
   margin: 0 auto;
   padding: 5px;
+  background-color: #f6ae2d;
   color: #262626;
+  border-radius: 0.25em;
+  transform: scale(1.1);
 }
-  
+
 .calendar .same-month {
   text-decoration: none;
   margin: 0 auto;
@@ -343,11 +254,11 @@ form {
   padding: 5px;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .calendar a:hover {
   background-color: #ddd;
-  
 }
 .agenda {
   font-family: Josefin Sans, sans-serif;
@@ -355,16 +266,14 @@ form {
   border-radius: 10px;
   background-color: whitesmoke;
   padding: 0 15px 25px 15px;
-  width: 400px;
-  margin-top: 1em;
-  margin-left: 1em;
-  box-shadow:5px 10px 10px black;
+  box-shadow: 5px 10px 10px black;
+  min-height: 50vh;
+  text-align: center;
 }
 .agenda .weekday h2 {
   color: blue;
   text-shadow: 0.5px 0.5px 2px red;
   margin: 0.5rem;
-  
 }
 
 .agenda .hours span {
@@ -374,14 +283,13 @@ form {
   word-wrap: normal;
   color: black;
   font-weight: 900;
-    
 }
 div.agenda .hours input {
   padding: 0;
   min-height: 60px;
   width: 100%;
 }
- 
+
 @media (min-width: 768px) {
   .main-header__nav {
     display: flex;
@@ -394,9 +302,8 @@ div.agenda .hours input {
   .user-message {
     width: 30rem;
   }
-.agenda {
-width: 600px;
-}  
-  
-  
+
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

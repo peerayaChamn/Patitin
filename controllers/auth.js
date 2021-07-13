@@ -1,21 +1,9 @@
 const crypto = require('crypto');
 
 const bcrypt = require('bcryptjs');
-//const nodemailer = require('nodemailer');
-//const sendgridTransport = require('nodemailer-sendgrid-transport');
 const { validationResult } = require('express-validator/check');
 
 const User = require('../models/user');
-
-/*const transporter = nodemailer.createTransport(
-  sendgridTransport({
-    auth: {
-      api_key:
-       api_key from sendgrid here ' '
-    }
-  })
-);*/
-
 exports.getLogin = (req, res, next) => {
   let message = req.flash('error');
   if (message.length > 0) {
@@ -140,6 +128,7 @@ exports.postSignup = (req, res, next) => {
       validationErrors: errors.array()
     });
   }
+  console.log('Hashing starts now!')
 
   bcrypt
     .hash(password, 12)
@@ -153,12 +142,6 @@ exports.postSignup = (req, res, next) => {
     })
     .then(result => {
       res.redirect('/login');
-       return transporter.sendMail({
-         to: email,
-       //  from: 'shop@node-complete.com',
-       //  subject: 'Signup succeeded!',
-         html: '<h1>You successfully signed up!</h1>'
-       });
     })
     .catch(err => {
       const error = new Error(err);

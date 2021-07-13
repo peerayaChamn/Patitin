@@ -10,6 +10,5 @@ const router = express.Router();
 
 router.get('/', homeController.getIndex);
 router.get('/calendar', calendarController.showCalendar);
-router.get('/test', calendarController.getTest);
 
 module.exports = router;
