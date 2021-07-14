@@ -1,11 +1,11 @@
 //global function for calendar
-Date.prototype.addDays = function(days) {
-      this.setDate( this.getDate() + days )
-      return this
+Date.prototype.addDays = function (days) {
+  this.setDate(this.getDate() + days)
+  return this
 }
-Date.prototype.addMonths = function(months) {
-      this.setMonth( this.getMonth() + months )
-      return this
+Date.prototype.addMonths = function (months) {
+  this.setMonth(this.getMonth() + months)
+  return this
 }
 
 const path = require('path');
@@ -124,7 +124,17 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(MONGODB_URI, options)
   .then(result => {
-    app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
+    const server = app.listen(PORT, () => console.log(`Listening on ${PORT}`))
+
+    const io = require('socket.io')(server)
+    io.on('connection', socket => {
+      console.log('Client connected!')
+
+      socket
+        .on('disconnect', () => {
+          console.log('A client disconnected!')
+        })
+    });
   })
   .catch(err => {
     console.log(err);

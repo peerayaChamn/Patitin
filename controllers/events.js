@@ -17,15 +17,16 @@ module.exports.getEvents = (req, res, next) => {
       }]
     })
     .then(events => {
-      console.log(req.session.user._id)
-      console.log(events)
+      console.log('found events')
       res.render('cal/events', {
         title: 'Patitin Calendar',
         events: events,
+        csrfToken: req.csrfToken(),
         path: '/events',
       })
     })
 }
+
 module.exports.newEvent = (req, res, next) => {
   const newEvent = new Event({
     title: "Test Event",
@@ -36,4 +37,22 @@ module.exports.newEvent = (req, res, next) => {
   newEvent.save()
     .then(result => console.log(result))
     .catch(err => console.log(err))
+}
+
+module.exports.findEvent = (req, res, next) => {
+  console.log('Querying events');
+  let query = req.body.query || "test";
+  console.log(query);
+  Event.find({
+      title: {
+        $regex: query,
+        $options: "i"
+      }
+    })
+    .then(events => {
+           res.send({
+        events: events
+      })
+      return events;
+    })
 }

@@ -19,7 +19,7 @@ main {
 .main-header {
   width: 100%;
   height: 3.5rem;
-  background-color: blueviolet;
+  background-color: rgb(138, 44, 226);
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
@@ -306,4 +306,98 @@ div.agenda .hours input {
   .container {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.searchBar {
+  grid-column: 1/3;
+  width: 100%;
+  display: flex;
+  background-color: rgba(138, 44, 226);
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
+
+.searchBar button {
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  padding: 0 1em;
+  font-size: 1em;
+}
+.searchBar:focus,
+.searchBar:focus-within {
+  background-color: rgb(178, 125, 228);
+}
+
+.searchBar [type="search"] {
+  width: 100%;
+  font-size: 1.25em;
+  border: none;
+  padding: 0.25em;
+  background-color: transparent;
+  outline: none;
+  padding: 0.25em 1em;
+  color: white;
+}
+
+.event-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(178, 125, 228);
+  color: white;
+  padding: 2em;
+  border-radius: 1.25em;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 0.5em;
+}
+.event-container p {
+  margin: 0;
+}
+.event-container .event-title {
+  grid-column: 1/3;
+  font-size: 2em;
+  align-self: end;
+}
+.event-container .event-date {
+  grid-column: 1/3;
+  color: rgba(138, 44, 226);
+  font-size: 0.75em;
+}
+.event-container .event-desc {
+  grid-column: 1/3;
+}
+/* Events for agenda */
+.agenda .event-container {
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+}
+
+.agenda .event-container p {
+  text-align: left;
+}
+
+/* Event title */
+.agenda .event-container .event-title {
+  grid-column: 1/3;
+  font-size: 1em;
+  align-self: end;
+}
+
+/* Event time */
+.agenda .event-container .event-time {
+  color: rgba(138, 44, 226);
+  background-color: rgba(250, 250, 250, 0.6);
+  text-align: center;
+  font-size: 1em;
+  grid-column: 1/3;
+}
+
+/* Event Desc */
+.agenda .event-container .event-desc {
+  grid-column: 1/3;
+  font-size: 0.75em;
+  padding: 0.75em 0;
 }

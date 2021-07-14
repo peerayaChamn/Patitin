@@ -5,9 +5,8 @@
   <% if(events.length >= 1){ %>
   <% events.forEach(e=>{ %>
   <div class="event-container">
-    <p><%= e.title %></p>
-    <p><%= e.datetime.getHours() %>:<%= e.datetime.getMinutes() %></p>
-    <p><%= e.description %></p>
+    <p class="event-time">Scheduled for: <%= e.datetime.getHours() %>:<%= e.datetime.getMinutes() %></p>
+    <p class="event-title"><%= e.title %></p>
   </div>
   <% }) %>
   <% } else {%>
