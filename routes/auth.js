@@ -4,11 +4,13 @@ const { check, body } = require('express-validator/check');
 const authController = require('../controllers/auth');
 const User = require('../models/user');
 
+const alreadyAuth = require('../middleware/alreadyAuth');
+
 const router = express.Router();
 
-router.get('/login', authController.getLogin);
+router.get('/login', alreadyAuth, authController.getLogin);
 
-router.get('/signup', authController.getSignup);
+router.get('/signup', alreadyAuth, authController.getSignup);
 
 router.post(
   '/login',

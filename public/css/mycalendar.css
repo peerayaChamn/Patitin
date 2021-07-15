@@ -25,6 +25,14 @@ main {
   align-items: center;
 }
 
+.btn-primary{
+  background-color: rgb(138, 44, 226);
+  border-color: rgb(129, 0, 250);
+}
+.btn-primary:hover{
+  background-color: rgb(149, 67, 226);
+}
+
 .main-header__nav {
   height: 100%;
   width: 100%;

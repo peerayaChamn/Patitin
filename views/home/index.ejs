@@ -1,25 +1,35 @@
 <%- include('../includes/head.ejs') %>
     <link rel="stylesheet" href="/css/home.css">
-</head>
+    </head>
 
-<body>
-    <%- include('../includes/navigation.ejs') %>
-    <h1>Online Tutoring Calender</h1>
-    <div class="front">
-        <p class="main">Schedule, view or adjust any appointments through our scheduling calender!</p>
-        <a class="btn" id="but" href="/login">View Your Calender</a>
-    </div>
-    <h1 class="features">Features</h1>
-    <div class="info">
-        <p>Book appointments</p>
-        <p>View schedule</p>
-        <p>Adjust appointments</p>
-        <p>View appointment details</p>
-    </div>
-    <div class="info">
-        <p class="desc">Easily browse available tutoring dates by tutor<br> and select what fits your schedule best.</p>
-        <p class="desc">Quickly view your calender displaying<br> all tutoring appointments you've made</p>
-        <p class="desc">Change of plans? Edit currently<br> scheduled appointments with ease.</p>
-        <p class="desc">Any scheduled tutoring appointment will show<br> you associated details with a click of a button.</p>
-    </div>
-<%- include('../includes/end.ejs') %>
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+            <div class="container">
+                <div class="col-12">
+                    <h1>Online Tutoring Calender</h1>
+                    <div class="front">
+                        <p class="main">Schedule, view or adjust any appointments through our scheduling calender!</p>
+                        <a class="btn btn-primary mb-3" id="but" href="/login">View Your Calender</a>
+                    </div>
+                    <h1 class="features">Features</h1>
+                    <div class="info">
+                        <ul>
+                            <li>Book appointments</li>
+                            <li>View schedule</li>
+                            <li>Adjust appointments</li>
+                            <li>View appointment details</li>
+                        </ul>
+                    </div>
+                    <div class="info">
+                        <p class="desc">Easily browse available tutoring dates by tutor<br> and select what fits your
+                            schedule best.</p>
+                        <p class="desc">Quickly view your calender displaying<br> all tutoring appointments you've made
+                        </p>
+                        <p class="desc">Change of plans? Edit currently<br> scheduled appointments with ease.</p>
+                        <p class="desc">Any scheduled tutoring appointment will show<br> you associated details with a
+                            click of a button.</p>
+                    </div>
+                </div>
+
+            </div>
+            <%- include('../includes/end.ejs') %>
