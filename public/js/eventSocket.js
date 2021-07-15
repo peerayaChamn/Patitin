@@ -26,13 +26,11 @@ const postData = async (url = '', data = {}, csrfToken) => {
 }
 
 const searchEvent = async () => {
-  const csrfToken = document.querySelector('[name="_csrf"]').value;
-  const query = "test"
-  const events = await postData('/events/find', {
-      query: query
-    }, csrfToken)
+  // const csrfToken = document.querySelector('[name="_csrf"]').value;
+  const query = document.querySelector('#eventSearch').value;
+  const url = `events/find?query=${query}`
+  console.log("searching for: " + query)
+  const events = await getData(url)
     .then(response => response.events);
   console.log(events)
-
-
 }
