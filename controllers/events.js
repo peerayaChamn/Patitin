@@ -29,13 +29,16 @@ module.exports.getEvents = (req, res, next) => {
 
 module.exports.newEvent = (req, res, next) => {
   const newEvent = new Event({
-    title: "Test Event",
-    description: "This is a test event to make sure the event schema is working!",
+    title: "Appointment with Instructor",
+    description: "You have to meet your instructor to solve the prove assignment",
     datetime: Date.now(),
     host: req.session.user._id
   });
   newEvent.save()
-    .then(result => console.log(result))
+    .then(result => {
+      console.log(result);
+      return res.redirect('/events');
+    })
     .catch(err => console.log(err))
 }
 

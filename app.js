@@ -64,7 +64,6 @@ const options = {
 const homeRoutes = require('./routes/home');
 const authRoutes = require('./routes/auth');
 const eventRoutes = require('./routes/events');
-const alreadyAuth = require('./middleware/alreadyAuth');
 
 app.use(bodyParser.urlencoded({
   extended: false
